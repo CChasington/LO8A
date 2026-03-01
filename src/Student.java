@@ -1,3 +1,4 @@
+import java.io.FileNotFoundException;
 
 /**
  * Author Chase Beckley
@@ -14,6 +15,12 @@ public class Student implements Comparable<Student> {
 		this._score = score;
 	}
 
+	/**
+	 * Compares two students's scores
+	 * 
+	 * @param other - The other student to compare this to.
+	 * @return 0 if equal, -1 if this < other, and 1 if this > other
+	 */
 	@Override
 	public int compareTo(Student other) {
 		if (other.equals(this)) return 0;               // equal       (0)
@@ -21,6 +28,11 @@ public class Student implements Comparable<Student> {
 		else return 1;                                  // this > other (1)
 	}
 	
+	/**
+	 * Print Students as a string
+	 * 
+	 * @return A string in the format of "{name} {score}"
+	 */
 	@Override
 	public String toString() {
 		return _name + " " + _score;
